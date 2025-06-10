@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class CommonController {
 
 	/*--- 完了後のリダイレクト先 ---*/
-	@GetMapping("/complete")
-	private String complete() {
-		return "complete";
-	}
+        @GetMapping("/complete")
+        public String complete() {
+                return "complete";
+        }
 }

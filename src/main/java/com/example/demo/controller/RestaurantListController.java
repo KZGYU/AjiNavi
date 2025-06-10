@@ -21,17 +21,17 @@ public class RestaurantListController {
 	private final RestaurantListService service;
 	
 	/*--- 最初のリクエスト -------------------------*/
-	@GetMapping("/top")
-	private String restaurantList(
-			@ModelAttribute RestaurantSearchForm form) {
-		return "restaurant-list";
-	}
+        @GetMapping("/top")
+        public String restaurantList(
+                        @ModelAttribute RestaurantSearchForm form) {
+                return "restaurant-list";
+        }
 	
 	/*--- 検索リクエスト -------------------------*/
-	@PostMapping("/restaurant-search")
-	private String restaurantSearch(
-			@ModelAttribute RestaurantSearchForm form,
-			Model model) {
+        @PostMapping("/restaurant-search")
+        public String restaurantSearch(
+                        @ModelAttribute RestaurantSearchForm form,
+                        Model model) {
 
 		List<Restaurant> list
 			= service.findByNameWildcard(form.getRestaurantName());

@@ -20,10 +20,10 @@ public class ReviewListController {
 	private final ReviewListService service;
 	
 	/*--- 検索リクエスト ------------------------*/
-	@PostMapping("/search-review")
-	private String searchReview(
-			@ModelAttribute ReviewSearchForm form,
-			Model model) {
+        @PostMapping("/search-review")
+        public String searchReview(
+                        @ModelAttribute ReviewSearchForm form,
+                        Model model) {
 		
 		List<Review> list = service.findByRestaurantId(form.getRestaurantId());
 				
